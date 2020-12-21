@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "payment.proto";
+
+package com.superpay.payment.wallet;
+
+service PaymentService {
+
+  rpc withdraw(Empty) returns (CashWithdraw) {}
+
+  rpc withdrawStream(Empty) returns (stream CashWithdraw) {}
+}
+
+message CashWithdraw {
+  Transaction transaction = 1;
+  string terminal = 2;
+}
