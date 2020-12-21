@@ -1,19 +1,16 @@
 syntax = "proto3";
 
-option java_outer_classname = "Supes";
+option java_outer_classname = "Payment";
 
-package me.escoffier.grpc.supes;
+package com.superpay.payment.wallet;
 
-message Hero {
-    string name = 1;
-    int32 level = 2;
-    string image = 3;
-}
-
-message Villain {
-    string name = 1;
-    int32 level = 2;
-    string image = 3;
+message Transaction {
+    string primaryAccountNumber = 2;
+    int32 processingCode = 3;
+    int64 transactionAmount = 4;
+    string transmissionDate = 7;
+    string localDate = 12;
+    string localTime = 11;
 }
 
 message Empty {}
